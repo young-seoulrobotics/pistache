@@ -43,10 +43,7 @@ toLowercase(std::string str) {
 
 bool
 LowercaseEqualStatic(const std::string& dynamic, const std::string& statik) {
-    return std::equal(dynamic.begin(), dynamic.end(), statik.begin(), statik.end(),
-        [] (const char& a, const char& b) {
-            return std::tolower(a) == b;
-        });
+    return toLowercase(dynamic) == toLowercase(statik);
 }
 
 Registry& Registry::instance() {
